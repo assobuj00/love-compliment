@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🌸Love Compliment🌸</title>
+<title>🌸Love Compliment 🌸</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
 
@@ -104,13 +104,13 @@ button:hover{
 
 <div class="container">
     <h1>💖 Just For You 💖</h1>
-    <input type="text" id="nameInput" placeholder="Type Your Name">
+    <input type="text" id="nameInput" placeholder="তোমার নাম লিখ!💖">
     <br>
-    <button onclick="startLove()">See Surprise 💕</button>
+    <button onclick="startLove()">সারপ্রাইজ দেখো!😊</button>
     <div class="compliment" id="complimentText"></div>
-    <div class="signature">Love With, Apon 💘</div>
+    <div id="signature" class="signature">Love With, Apon 💘</div>
+    <p style="font-size:14px; text-align:end;" >Develop by<br>Apon</p>
 </div>
-
 <script>
 const compliments = [
 "তুমি সত্যিই অসাধারণ 💕",
@@ -118,7 +118,27 @@ const compliments = [
 "তুমি আমার জীবনের সবচেয়ে সুন্দর অনুভূতি ❤️",
 "তোমাকে ছাড়া কিছুই ভাবতে পারি না 💞",
 "তুমি স্বপ্নের থেকেও বেশি সুন্দর 🌹",
-"তুমি আমার হৃদয়ের রানী 💖"
+"তুমি আমার হৃদয়ের রানী 💖",
+"তুমি আমার জীবনের সবচেয়ে সুন্দর অনুভূতি 💖",
+"তোমার হাসি দেখলেই আমার পুরো দিনটা ভালো হয়ে যায় 😊",
+"তোমার চোখের দিকে তাকালে মনে হয় আমি স্বপ্নে আছি ✨",
+"তুমি আমার জীবনের সবচেয়ে প্রিয় মানুষ 🌸",
+"তোমাকে ভাবলেই হৃদয়টা অদ্ভুত শান্তি পায় 💞",
+"তুমি আমার পৃথিবীর সবচেয়ে সুন্দর মেয়ে 🌹",
+"তোমার সাথে কাটানো প্রতিটা মুহূর্ত আমার কাছে অমূল্য 💎",
+"তুমি আমার হৃদয়ের সবচেয়ে নিরাপদ জায়গা ❤️",
+"তোমাকে ছাড়া আমার পৃথিবীটা অসম্পূর্ণ 💔➡️❤️",
+"তুমি আমার জীবনের সবচেয়ে সুন্দর গল্প 📖💖",
+"তোমার হাসি আমার সবচেয়ে প্রিয় জিনিস 😍",
+"তুমি আমার সব স্বপ্নের কারণ ✨",
+"তুমি থাকলে পৃথিবীটা আরও সুন্দর লাগে 🌍💞",
+"তুমি আমার হৃদয়ের সবচেয়ে মিষ্টি মানুষ 🍯",
+"তোমার সাথে কথা বললেই মনটা ভালো হয়ে যায় 🌸",
+"তুমি আমার জীবনের সবচেয়ে সুন্দর আশীর্বাদ 💫",
+"তুমি আমার ভালোবাসার সবচেয়ে প্রিয় নাম ❤️",
+"তুমি আমার হৃদয়ের সবচেয়ে উজ্জ্বল তারা ⭐",
+"তুমি আমার জীবনের সবচেয়ে প্রিয় মানুষদের মধ্যে এক নম্বর 💖",
+"তোমাকে ছাড়া আমার পৃথিবী কল্পনাই করতে পারি না 💞"
 ];
 
 let started = false;
@@ -168,17 +188,18 @@ function changeCompliment(){
 
     typeEffect(message);
 
-    setTimeout(changeCompliment, 3000);
+    setTimeout(changeCompliment, 2500);
 }
 
 function createFloating(){
-    const name = document.getElementById("nameInput").value.trim() || "Her";
-
+    const name = document.getElementById("nameInput").value.trim() || "";
+    const tvSignature = document.getElementById('signature');
+    tvSignature.innerText = `Miss You, ${name}  💘`
     const div = document.createElement("div");
     div.classList.add("float");
 
-    const emojis = ["💖","🌸","✨","💞","🌹","😍","💌"];
-    div.innerText = `Apon 🤍 ${name} ${emojis[Math.floor(Math.random()*emojis.length)]}`;
+    const emojis = ["💖","Only For You","🌸","You Are My Mine","💞","My Heart","😍","My World","💌", "You Are My Happiness"];
+    div.innerText = `${emojis[Math.floor(Math.random()*emojis.length)]} ${name}`;
 
     div.style.left = Math.random()*100 + "vw";
     div.style.fontSize = (14 + Math.random()*16) + "px";
@@ -186,7 +207,7 @@ function createFloating(){
 
     document.body.appendChild(div);
 
-    setTimeout(()=>div.remove(),8000);
+    setTimeout(()=>div.remove(),7000);
 }
 
 setInterval(createFloating,400);
